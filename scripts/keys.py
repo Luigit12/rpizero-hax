@@ -14,5 +14,5 @@ def send(keys):
 	print(keys)
 
 def sendSpecial(keys):
-	os.system('/home/pi/pizero-usb-hid-keyboard/sendkeys ' + keys)
+	os.system('echo'+ keys + ' | /home/pi/hid-gadget-test /dev/hidg0 keyboard')
 	print(keys)
