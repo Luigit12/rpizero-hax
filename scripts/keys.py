@@ -1,11 +1,12 @@
 import os
 import time
 
+
 def send(keys, delay=.05):
     print(keys)
     for element in range(0, len(keys)):
         if keys[element].isupper() == True:
-            os.system(f'echo "left-shift" {keys[element].lower()} | /home/pi/hid_gadget_test /dev/hidg0 keyboard')
+            os.system(f'echo left-shift {keys[element].lower()} | /home/pi/hid_gadget_test /dev/hidg0 keyboard')
         elif keys[element].isupper() == False:
             if keys[element] == "/":
                 os.system('echo "slash" | /home/pi/hid_gadget_test /dev/hidg0 keyboard')
@@ -27,7 +28,8 @@ def send(keys, delay=.05):
                 os.system(f'echo {keys[element]} | /home/pi/hid_gadget_test /dev/hidg0 keyboard')
         time.sleep(delay)
 
-def sendSpecial(keys):
-    os.system('echo ' + keys + ' | /home/pi/hid_gadget_test /dev/hidg0 keyboard')
-    time.sleep(0.1)
+
+def sendSpecial(keys, delay=.05):
     print(keys)
+    os.system('echo ' + keys + ' | /home/pi/hid_gadget_test /dev/hidg0 keyboard')
+    time.sleep(delay)
