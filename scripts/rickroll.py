@@ -1,12 +1,34 @@
-import keys,time
+import time
+import keys
 
-time.sleep(5)
+w = lambda x=1: time.sleep(x)
+
+for i in range(5, 0, -1):
+    print('Firing in', i)
+    w()
+
+for _ in range(3):
+    keys.sendSpecial('left-meta enter')
+    w()
 keys.sendSpecial('left-meta b')
-time.sleep(1)
+w()
 keys.sendSpecial('left-ctrl t')
-time.sleep(1)
+w()
+keys.sendSpecial('left-ctrl l')
+w(2)
 keys.send('youtu.be/ptCzSA1BY6s')
-time.sleep(0.2)
+w()
 keys.sendSpecial('enter')
-time.sleep(2)
-keys.send('f')
+w(2)
+keys.sendSpecial('space')
+while True:
+    space = input('')
+    if space:
+        break
+    keys.sendSpecial('space')
+
+keys.sendSpecial('left-ctrl w')
+w()
+keys.sendSpecial('left-ctrl q')
+w()
+keys.sendSpecial('left-meta enter')
